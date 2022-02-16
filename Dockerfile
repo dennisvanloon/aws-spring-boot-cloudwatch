@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM public.ecr.aws/fed-dev/amazon/corretto-11:latest
 
 WORKDIR /opt/app
 
