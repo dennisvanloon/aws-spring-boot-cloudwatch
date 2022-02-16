@@ -7,7 +7,7 @@ import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.EnvironmentVariableCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 
@@ -26,7 +26,7 @@ public class DemoApplication {
 		return CloudWatchAsyncClient
 				.builder()
 				.region(Region.EU_WEST_1)
-				.credentialsProvider(ProfileCredentialsProvider.create("profile"))
+				.credentialsProvider(EnvironmentVariableCredentialsProvider.create())
 				.build();
 	}
 

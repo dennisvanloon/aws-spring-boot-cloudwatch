@@ -15,3 +15,6 @@ Access it: `http://localhost:8080/`
 
 Add a test that calls the RestController one time and verifies the response.
 
+docker build -t aws-spring-boot-cloudwatch:latest .
+docker run -p 8080:8080 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -t aws-spring-boot-cloudwatch:latest
+

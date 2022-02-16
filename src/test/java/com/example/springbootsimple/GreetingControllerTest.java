@@ -52,7 +52,8 @@ public class GreetingControllerTest {
     @AfterEach
     public void afterEach() throws InterruptedException {
         meterRegistry.clear();
-        SECONDS.sleep(2);
+        meterRegistry.close();
+        SECONDS.sleep(5);
     }
 
     @LocalServerPort
